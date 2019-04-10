@@ -47,7 +47,7 @@ public class ImageHelper {
 
 
 		imgRepSer.getAllImages().forEach(img -> {
-			System.out.println(img.getId()+ " -- "+img.getImageName()+" -- "+img.getPath()+" -- "+img.getDescription());
+			//System.out.println(img.getId()+ " -- "+img.getImageName()+" -- "+img.getPath()+" -- "+img.getDescription());
 			ImageResponse imgResp = new ImageResponse();
 
 			imgResp.setImageDescription(img.getDescription());
@@ -58,8 +58,11 @@ public class ImageHelper {
 			imgRespList.add(imgResp);
 		});
 		
-		imgRespList.forEach(img -> 
-			System.out.println(img.getImageId()+ " -- "+img.getImageName()+" -- "+img.getImagePath()+" -- "+img.getImageDescription()));
+		/*
+		 * imgRespList.forEach(img -> System.out.println(img.getImageId()+
+		 * " -- "+img.getImageName()+" -- "+img.getImagePath()+" -- "+img.
+		 * getImageDescription()));
+		 */
 		
 		return imgRespList;
 	}
@@ -71,5 +74,24 @@ public class ImageHelper {
 		File img = new File(imgPath);
 		
 		return img;
+	}
+	
+	public ArrayList<ImageResponse> retrieveAllImageInfo()
+	{
+		ArrayList<ImageResponse> imgRespList = new ArrayList<ImageResponse>();
+
+		imgRepSer.getAllImages().forEach(img -> {
+			System.out.println(img.getId()+ " -- "+img.getImageName()+" -- "+img.getPath()+" -- "+img.getDescription());
+			ImageResponse imgResp = new ImageResponse();
+
+			imgResp.setImageDescription(img.getDescription());
+			imgResp.setImageId(img.getId());
+			imgResp.setImageName(img.getImageName());
+			imgResp.setImagePath(img.getPath());
+
+			imgRespList.add(imgResp);
+		});
+		
+		return imgRespList;
 	}
 }

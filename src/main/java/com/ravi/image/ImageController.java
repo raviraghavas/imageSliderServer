@@ -33,6 +33,14 @@ public class ImageController {
 	}
 	
 	@RequestMapping(path="/refreshImages",produces = "application/json")
+	public ResponseEntity refreshImage() throws IOException{
+		
+		ArrayList<ImageResponse> imgResp =  imgHelp.refreshImages();
+				
+		return ResponseEntity.ok().body(imgResp);
+	}
+	
+	@RequestMapping(path="/retrieveAllImages",produces = "application/json")
 	public ResponseEntity getAllImage() throws IOException{
 		
 		ArrayList<ImageResponse> imgResp =  imgHelp.refreshImages();
@@ -47,5 +55,7 @@ public class ImageController {
 		
 		return ResponseEntity.ok().contentType(MediaType.valueOf(FileTypeMap.getDefaultFileTypeMap().getContentType(img))).body(Files.readAllBytes(img.toPath()));
 	}
+	
+	
 
 }
