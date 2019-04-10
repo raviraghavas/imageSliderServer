@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: ravi
+Build-Jdk: 11.0.1
+Implementation-Title: Image Gallery
+Implementation-Version: 1.0
+Implementation-Vendor-Id: com.ravi
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/image_gallery/
+Created-By: Maven Integration for Eclipse
+
