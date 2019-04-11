@@ -1,4 +1,4 @@
-package com.ravi.image;
+package com.ravi.image.controller;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,6 +10,7 @@ import javax.activation.FileTypeMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,10 +41,11 @@ public class ImageController {
 		return ResponseEntity.ok().body(imgResp);
 	}
 	
+	@CrossOrigin
 	@RequestMapping(path="/retrieveAllImages",produces = "application/json")
 	public ResponseEntity getAllImage() throws IOException{
-		
-		ArrayList<ImageResponse> imgResp =  imgHelp.refreshImages();
+		System.out.println("Inside retrieve all image info");
+		ArrayList<ImageResponse> imgResp =  imgHelp.retrieveAllImageInfo();
 				
 		return ResponseEntity.ok().body(imgResp);
 	}

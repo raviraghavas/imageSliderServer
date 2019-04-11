@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ImageResponse {
 
-	@JsonProperty("name")
+	@JsonProperty("title")
 	String imageName;
 
 	@JsonProperty("id")
@@ -13,7 +13,7 @@ public class ImageResponse {
 	@JsonProperty("description")
 	String imageDescription;
 	
-	@JsonProperty("path")
+	@JsonProperty("image")
 	String imagePath;
 
 	/**
