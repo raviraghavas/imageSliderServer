@@ -27,8 +27,8 @@ public class ImageHelper {
 	
 	@Autowired
 	Environment env;
-
-	@Scheduled(fixedRate = 120000)
+	
+	@Scheduled(fixedRateString = "${refreshTimeInSec}000")
 	public ArrayList<ImageResponse> refreshImages()
 	{
 		System.out.println("Refresh Image in progress.....");
